@@ -1,0 +1,34 @@
+syntax = "proto3";
+package SocketProto;
+
+enum RequestCode
+{
+	RequestNone=0;
+	User=1;
+}
+
+enum ActionCode
+{
+	ActionNone=0;
+	register=1;
+	login=2;
+}
+
+enum ReturnCode
+{
+	ReturnNone=0;
+	succeed=1;
+	fail=2;
+}
+message LoginPack
+{
+	string name=1;
+	string password=2;
+}
+message MainPack
+{
+	RequestCode requestcode=1;
+	ActionCode actioncode=2;
+	ReturnCode returncode=3;
+	LoginPack loginpack=4;
+}
